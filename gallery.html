@@ -129,6 +129,24 @@ footer{
         text-align:center;
     }
 }
+.upload-box{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.upload-box button{
+    background:#00ffd5;
+    color:#000;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.upload-box button:hover{
+    background:#00d9b5;
+}
 </style>
 
 </head>
@@ -155,6 +173,11 @@ footer{
 
 <!-- GALLERY -->
 <section class="container">
+<div class="upload-box">
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="sendImage()">📷 Upload Photo</button>
+</div>
+
 
     <div class="grid">
 
@@ -361,16 +384,122 @@ footer{
     <p>© 2026 Chorale Yacu - Gallery Page</p>
 </footer>
 
-<script>
-function openImg(card){
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCU_22mqig2DFfENV7eIcNlPC9-SfFA524",
+  authDomain: "chorale-yacu.firebaseapp.com",
+  projectId: "chorale-yacu",
+  storageBucket: "chorale-yacu.firebasestorage.app",
+  messagingSenderId: "180520893968",
+  appId: "1:180520893968:web:7925b84c4b281cf43c5495"
+};
+
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+
+window.openImg = function(card){
     let img = card.querySelector("img").src;
     document.getElementById("lightboxImg").src = img;
     document.getElementById("lightbox").style.display = "flex";
 }
 
-function closeImg(){
+window.closeImg = function(){
     document.getElementById("lightbox").style.display = "none";
 }
+
+window.sendImage = async function(){
+
+    const file = document.getElementById("fileInput").files[0];
+
+    if(!file){
+        alert("Hitamo ifoto");
+        return;
+    }
+
+    try{
+
+        const storageRef = ref(
+            storage,
+            "gallery/" + Date.now() + "_" + file.name
+        );
+
+        await uploadBytes(storageRef, file);
+
+        const imageUrl = await getDownloadURL(storageRef);
+
+        document.querySelector(".grid").insertAdjacentHTML(
+            "afterbegin",
+            `
+            <div class="card" onclick="openImg(this)">
+                <img src="${imageUrl}" alt="Gallery Photo">
+                <div class="overlay">Chorale Yacu</div>
+            </div>
+            `
+        );
+
+        alert("Ifoto yashyizwe online neza!");
+        document.getElementById("fileInput").value = "";
+
+    }catch(error){
+        console.error(error);
+        alert("Upload yanze");
+    }
+}
+window.sendImage = async function(){
+
+    const btn = document.querySelector(".upload-box button");
+    const file = document.getElementById("fileInput").files[0];
+
+    if(!file){
+        alert("Hitamo ifoto");
+        return;
+    }
+
+    btn.innerText = "Uploading...";
+
+    try{
+
+        const storageRef = ref(
+            storage,
+            `gallery/${Date.now()}_${file.name}`
+        );
+
+        await uploadBytes(storageRef,file);
+
+        const imageUrl = await getDownloadURL(storageRef);
+
+        document.querySelector(".grid").insertAdjacentHTML(
+            "afterbegin",
+            `
+            <div class="card" onclick="openImg(this)">
+                <img src="${imageUrl}">
+                <div class="overlay">Chorale Yacu</div>
+            </div>
+            `
+        );
+
+        alert("Ifoto yashyizwe online neza!");
+
+        document.getElementById("fileInput").value = "";
+
+    }catch(error){
+
+        console.error(error);
+        alert("Upload yanze!");
+
+    }
+
+    btn.innerText = "📷 Upload Photo";
+}
+
 </script>
 
 </body>

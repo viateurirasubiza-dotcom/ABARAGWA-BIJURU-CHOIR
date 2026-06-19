@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chorale Yacu | Home</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+/* NAVBAR */
+header{
+    background:#002244;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+/* HERO (MAIN FOCUS) */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.btn{
+    background:gold;
+    padding:12px 25px;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+/* SECTIONS */
+.section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.section h2{
+    color:#002244;
+}
+
+/* EVENTS */
+.event{
+    background:#f2f2f2;
+    padding:20px;
+    margin:15px auto;
+    width:70%;
+    border-left:5px solid gold;
+}
+
+/* FOOTER */
+footer{
+    background:#002244;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .event{
+        width:90%;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h2>CHORALE YACU</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members</a>
+        <a href="events.html">Events</a>
+        <a href="music.html">Music</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Murakaza Neza Kuri Chorale Yacu</h1>
+        <p>Turirimba dusingiza Imana kandi twubaka abantu mu buryo bw’umwuka</p>
+        <a href="about.html" class="btn">Menya Byinshi</a>
+    </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="section">
+    <h2>Turi Bande?</h2>
+    <p>
+        Chorale yacu igizwe n’abakristu biyemeje kuramya Imana binyuze mu ndirimbo
+        no kwamamaza ubutumwa bwiza.
+    </p>
+</section>
+
+<!-- EVENTS -->
+<section class="section">
+    <h2>Ibikorwa Biri Imbere</h2>
+
+    <div class="event">
+        <h3>Concert Yo Gushima Imana</h3>
+        <p>📅 15 Kanama 2026</p>
+    </div>
+
+    <div class="event">
+        <h3>Igiterane Cy’Indirimbo</h3>
+        <p>📅 10 Nzeri 2026</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Chorale Yacu - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

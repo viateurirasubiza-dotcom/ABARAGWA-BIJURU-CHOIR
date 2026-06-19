@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us | Chorale Yacu</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b1220;
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:#0f1b33;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00ffd5;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(135deg,#0f1b33,#1b2a4a);
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    color:#b8c2d9;
+}
+
+/* FORM */
+.container{
+    padding:60px 10%;
+    display:flex;
+    justify-content:center;
+}
+
+.form-box{
+    background:#121c33;
+    padding:30px;
+    border-radius:15px;
+    width:100%;
+    max-width:500px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+input, select, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#00ffd5;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00cbb0;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp:hover{
+    background:#1ebe5d;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#0f1b33;
+    margin-top:50px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h2>JOIN CHORALE</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members</a>
+        <a href="events.html">Events</a>
+        <a href="music.html">Music</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Injira muri Chorale</h1>
+    <p>Ushobora kwiyandikisha cyangwa kuduhamagara kuri WhatsApp</p>
+</section>
+
+<!-- FORM -->
+<section class="container">
+
+    <div class="form-box">
+
+        <h2>Registration Form</h2>
+
+        <form>
+            <input type="text" placeholder="Amazina yawe" required>
+            <input type="tel" placeholder="Numero ya Telefoni" required>
+
+            <select>
+                <option>Icyiciro ushaka</option>
+                <option>Soprano</option>
+                <option>Alto</option>
+                <option>Tenor</option>
+                <option>Bass</option>
+            </select>
+
+            <textarea rows="4" placeholder="Ubutumwa bwawe"></textarea>
+
+            <button type="submit">Ohereza</button>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a class="whatsapp"
+   href="https://wa.me/2507XXXXXXXX"
+   target="_blank">
+   WhatsApp
+</a>
+
+<footer>
+    <p>© 2026 Chorale Yacu - Join Page</p>
+</footer>
+
+</body>
+</html>

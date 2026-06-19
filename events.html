@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events | Chorale Yacu</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f6f7fb;
+}
+
+/* HEADER */
+header{
+    background:#0b1f3a;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffcc00;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+/* EVENTS GRID */
+.container{
+    padding:70px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:#0b1f3a;
+    margin-bottom:40px;
+    font-size:30px;
+}
+
+/* CARD PRO */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card-header{
+    background:#0b1f3a;
+    color:white;
+    padding:20px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.date{
+    display:inline-block;
+    background:#ffcc00;
+    color:black;
+    padding:5px 10px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.location{
+    color:#666;
+    margin-top:10px;
+}
+
+.status{
+    margin-top:15px;
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.upcoming{
+    background:#d4f8d4;
+    color:#1a7f1a;
+}
+
+.done{
+    background:#f8d4d4;
+    color:#a30000;
+}
+
+/* FOOTER */
+footer{
+    background:#0b1f3a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h2>CHORALE YACU</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members</a>
+        <a href="events.html">Events</a>
+        <a href="music.html">Music</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Ibikorwa & Concerts</h1>
+    <p>Reba ibitaramo n'ibikorwa bya Chorale yacu</p>
+</section>
+
+<!-- EVENTS -->
+<section class="container">
+
+    <h2 class="section-title">Ibikorwa Biri Imbere</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Concert Yo Gushima Imana</h3>
+            </div>
+            <div class="card-body">
+                <span class="date">15 Kanama 2026</span>
+                <p>
+                    Concert ikomeye yo gushimira Imana n'indirimbo z'ihimbaza.
+                </p>
+                <p class="location">📍 Paruwasi Nkuru</p>
+                <span class="status upcoming">Upcoming</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Igiterane cy'Indirimbo</h3>
+            </div>
+            <div class="card-body">
+                <span class="date">10 Nzeri 2026</span>
+                <p>
+                    Igiterane cyo kuramya Imana binyuze mu ndirimbo z'ububyutse.
+                </p>
+                <p class="location">📍 Auditorium y'Itorero</p>
+                <span class="status upcoming">Upcoming</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Concert Yashize</h3>
+            </div>
+            <div class="card-body">
+                <span class="date">20 Gicurasi 2026</span>
+                <p>
+                    Icyumweru cy'indirimbo cyabaye cyiza cyane.
+                </p>
+                <p class="location">📍 Kigali City Hall</p>
+                <span class="status done">Completed</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Chorale Yacu - Events Page</p>
+</footer>
+
+</body>
+</html>
